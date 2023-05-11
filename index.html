@@ -1,72 +1,13 @@
-<!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <title>Course Recommender</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f2f2f2;
-      margin: 0;
-      padding: 20px;
-    }
-    
-    h1 {
-      text-align: center;
-      color: #333;
-    }
-    
-    form {
-      max-width: 400px;
-      margin: 0 auto;
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 4px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
-    
-    label, select {
-      display: block;
-      margin-bottom: 10px;
-      color: #333;
-    }
-    
-    select {
-      width: 100%;
-      padding: 8px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-sizing: border-box;
-    }
-    
-    input[type="submit"] {
-      background-color: #4CAF50;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    
-    input[type="submit"]:hover {
-      background-color: #45a049;
-    }
-    
-    #recommendations {
-      margin-top: 20px;
-    }
-    
-    ul {
-      list-style-type: none;
-      padding: 0;
-    }
-    
-    li {
-      margin-bottom: 5px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <h1>Course Recommender</h1>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Course Recommender</h1>
   <form id="courseForm">
     <label for="subject">Select a subject:</label>
     <select id="subject" name="subject">
@@ -92,23 +33,10 @@
       <!-- Add more options as needed -->
     </select>
     
-    <input type="submit" value="Get Recommendations">
+    <input type="submit" class="buttons" id="generate" value="Get Recommendations">
+
   </form>
   
   <div id="recommendations"></div>
-  
-  <script>
-    document.getElementById("courseForm").addEventListener("submit", function(event) {
-      event.preventDefault(); // Prevent form submission
-      
-      // Retrieve form values
-      var subject = document.getElementById("subject").value;
-      var level = document.getElementById("level").value;
-      var interests = Array.from(document.getElementById("interests").selectedOptions).map(option => option.value);
-      
-      // Perform recommendation logic (replace with your own logic)
-      var recommendations = getCourseRecommendations(subject, level, interests);
-      
-      // Display recommendations
-      var recommendationsDiv = document.getElementById("recommendations");
-      recommendationsDiv.innerHTML
+  <script src="./script.js"></script>
+</body>
